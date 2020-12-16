@@ -1,0 +1,13 @@
+[
+    {
+        "model": "vacaplusapi.activity",
+        "pk": 1,
+        "fields": {
+            "title": "Swimming",
+            "location": 1,
+            "description": "Activity time!",
+            "date": "2019-12-12",
+            "photo": "asd"
+        }
+    }
+]

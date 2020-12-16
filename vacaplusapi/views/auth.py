@@ -59,13 +59,13 @@ def register_user(request):
     )
 
     # Now save the extra info in the levelupapi_gamer table
-    gamer = VacaUser.objects.create(
+    user = VacaUser.objects.create(
         bio=req_body['bio'],
         user=new_user
     )
 
     # Commit the user to the database by saving it
-    gamer.save()
+    user.save()
 
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=new_user)

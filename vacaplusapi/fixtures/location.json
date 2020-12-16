@@ -1,0 +1,13 @@
+[
+    {
+        "model": "vacaplusapi.location",
+        "pk": 1,
+        "fields": {
+            "time": "2019-12-12",
+            "user": 1,
+            "title": "Hawaii",
+            "description": "Fun time!",
+            "photo": "asd"
+        }
+    }
+]
