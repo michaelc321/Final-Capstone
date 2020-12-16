@@ -15,7 +15,8 @@ class VacaUsers(ViewSet):
 
         vacauser = VacaUser()
 
-        vacauser.label = request.data["label"]
+        vacauser.user = request.data["user"]
+        vacauser.bio = request.data["bio"]
 
         try:
             vacauser.save()
@@ -80,7 +81,7 @@ class VacaUsers(ViewSet):
 class VacaUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = VacaUser
-        fields = ('id', 'label')
+        fields = ('id', 'user', 'bio')
 
 
 

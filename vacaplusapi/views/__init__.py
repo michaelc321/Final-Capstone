@@ -3,3 +3,4 @@ from .auth import register_user
 from .activity import Activites
 from .location import Locations
 from .vacauser import VacaUsers
+from .user import Users

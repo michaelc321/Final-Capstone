@@ -80,7 +80,7 @@ class Activites(ViewSet):
 class ActivitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Activity
-        fields = ('id', 'label')
+        fields = ('id', 'title', 'description', 'date', 'photo', 'location')
 
 
 
