@@ -7,7 +7,7 @@ from rest_framework import status
 from vacaplusapi.models import Activity
 
 
-class Activites(ViewSet):
+class Activities(ViewSet):
     """Rare categories"""
 
     def create(self, request):
@@ -43,10 +43,10 @@ class Activites(ViewSet):
         Returns:
             Response -- JSON serialized list of Categories
         """
-        activites = Activity.objects.all()
+        activities = Activity.objects.all()
 
         serializer = ActivitySerializer(
-            activites, many=True, context={'request': request})
+            activities, many=True, context={'request': request})
         return Response(serializer.data)
 
     def destroy(self, request, pk=None):

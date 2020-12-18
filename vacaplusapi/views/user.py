@@ -10,6 +10,7 @@ from rest_framework.decorators import action
 
 
 class Users(ViewSet):
+
     """Users"""
     def list(self, request):
         """Handle GET requests to users resource
