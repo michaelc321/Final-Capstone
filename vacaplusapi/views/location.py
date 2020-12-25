@@ -1,10 +1,11 @@
 """View module for handling requests about categories"""
 from django.http import HttpResponseServerError
+from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from vacaplusapi.models import Location
+from vacaplusapi.models import Location, VacaUser
 
 
 class Locations(ViewSet):
@@ -13,10 +14,11 @@ class Locations(ViewSet):
     def create(self, request):
         """Handle Location operations for categories"""
 
+        user = VacaUser.objects.get(user=request.auth.user)
         location = Location()
 
         location.time = request.data["time"]
-        location.user = request.data["user"]
+        location.user = user
         location.title = request.data["title"]
         location.description = request.data["description"]
         location.photo = request.data["photo"]
@@ -60,7 +62,7 @@ class Locations(ViewSet):
         """
         try:
             location = Location.objects.get(pk=pk)
-            Location.delete()
+            location.delete()
 
             return Response({}, status=status.HTTP_204_NO_CONTENT)
 
