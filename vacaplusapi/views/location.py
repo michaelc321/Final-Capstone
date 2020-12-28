@@ -74,10 +74,10 @@ class Locations(ViewSet):
 
     def update(self, request, pk=None):
         """Handle PUT requests for Categories"""
-
+        user = VacaUser.objects.get(user=request.auth.user)
         location = Location.objects.get(pk=pk)
         location.time = request.data["time"]
-        location.user = request.data["user"]
+        location.user = user
         location.title = request.data["title"]
         location.description = request.data["description"]
         location.photo = request.data["photo"]
