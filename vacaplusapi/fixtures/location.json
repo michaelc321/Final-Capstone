@@ -3,11 +3,72 @@
         "model": "vacaplusapi.location",
         "pk": 1,
         "fields": {
-            "time": "2019-12-12",
+            "time": "2018-04-12",
             "user": 1,
             "title": "Hawaii",
-            "description": "Fun time!",
-            "photo": "asd"
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis lectus sit amet velit viverra viverra. Cras efficitur volutpat sem.",
+            "activity": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "photo": "https://res.cloudinary.com/db1peeart/image/upload/v1601909566/Michael/hawaii2_jwrmwb.jpg"
+        }
+    },
+    {
+        "model": "vacaplusapi.location",
+        "pk": 2,
+        "fields": {
+            "time": "2018-06-03",
+            "user": 1,
+            "title": "Mexico",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis lectus sit amet velit viverra viverra. Cras efficitur volutpat sem.",
+            "activity": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "photo": "https://res.cloudinary.com/db1peeart/image/upload/v1601908528/Michael/filip-gielda-VPavA7BBxK0-unsplash_eq3rvv.jpg"
+        }
+    },
+    {
+        "model": "vacaplusapi.location",
+        "pk": 3,
+        "fields": {
+            "time": "2019-02-02",
+            "user": 1,
+            "title": "Tibet",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis lectus sit amet velit viverra viverra. Cras efficitur volutpat sem.",
+            "activity": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "photo": "https://res.cloudinary.com/db1peeart/image/upload/v1601862805/Michael/jeremy-bishop-mQj1JmAk_54-unsplash_rzxczo.jpg"
+        }
+    },
+    {
+        "model": "vacaplusapi.location",
+        "pk": 4,
+        "fields": {
+            "time": "2019-04-06",
+            "user": 1,
+            "title": "Marshall Islands",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis lectus sit amet velit viverra viverra. Cras efficitur volutpat sem.",
+            "activity": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "photo": "https://res.cloudinary.com/db1peeart/image/upload/v1601862719/Michael/shifaaz-shamoon-qtbV_8P_Ksk-unsplash_wlfakt.jpg"
+        }
+    },
+    {
+        "model": "vacaplusapi.location",
+        "pk": 5,
+        "fields": {
+            "time": "2019-06-12",
+            "user": 1,
+            "title": "Russia",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis lectus sit amet velit viverra viverra. Cras efficitur volutpat sem.",
+            "activity": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "photo": "https://res.cloudinary.com/db1peeart/image/upload/v1601862553/Michael/nikita-karimov-lvJZhHOIJJ4-unsplash_tudcht.jpg"
+        }
+    },
+    {
+        "model": "vacaplusapi.location",
+        "pk": 6,
+        "fields": {
+            "time": "2019-07-10",
+            "user": 1,
+            "title": "Hawaii",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis lectus sit amet velit viverra viverra. Cras efficitur volutpat sem.",
+            "activity": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "photo": "https://res.cloudinary.com/db1peeart/image/upload/v1601862534/Michael/hawaii_vnmthq.jpg"
         }
     }
 ]

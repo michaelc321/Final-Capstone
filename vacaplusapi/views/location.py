@@ -22,6 +22,7 @@ class Locations(ViewSet):
         location.title = request.data["title"]
         location.description = request.data["description"]
         location.photo = request.data["photo"]
+        location.activity = request.data["activity"]
 
         try:
             location.save()
@@ -74,13 +75,16 @@ class Locations(ViewSet):
 
     def update(self, request, pk=None):
         """Handle PUT requests for Categories"""
+
         user = VacaUser.objects.get(user=request.auth.user)
         location = Location.objects.get(pk=pk)
+
         location.time = request.data["time"]
         location.user = user
         location.title = request.data["title"]
         location.description = request.data["description"]
         location.photo = request.data["photo"]
+        location.activity = request.data["activity"]
         location.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
@@ -90,7 +94,7 @@ class Locations(ViewSet):
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
-        fields = ('id', 'time', 'user', 'title', 'description', 'photo')
+        fields = ('id', 'time', 'user', 'title', 'description', 'photo', 'activity')
 
 
 
