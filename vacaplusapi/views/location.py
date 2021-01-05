@@ -50,7 +50,9 @@ class Locations(ViewSet):
         Returns:
             Response -- JSON serialized list of Categories
         """
-        locations = Location.objects.all()
+        user = VacaUser.objects.get(user=request.auth.user)
+        locations = Location.objects.filter(user=user)
+        
 
         serializer = LocationSerializer(
             locations, many=True, context={'request': request})
