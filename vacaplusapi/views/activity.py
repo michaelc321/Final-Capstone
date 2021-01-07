@@ -1,10 +1,11 @@
 """View module for handling requests about categories"""
+from vacaplusapi.models.vacauser import VacaUser
 from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from vacaplusapi.models import Activity
+from vacaplusapi.models import Activity, Location
 
 
 class Activities(ViewSet):
@@ -15,7 +16,10 @@ class Activities(ViewSet):
 
         activity = Activity()
 
-        activity.label = request.data["label"]
+        activity.name = request.data["name"]
+        activity.description = request.data["description"]
+        activity.date = request.data["date"]
+        activity.photo = request.data["photo"]
 
         try:
             activity.save()
@@ -43,6 +47,8 @@ class Activities(ViewSet):
         Returns:
             Response -- JSON serialized list of Categories
         """
+
+        # activity = VacaUser.objects.get(locationId=request.auth.user)
         activities = Activity.objects.all()
 
         serializer = ActivitySerializer(
@@ -69,8 +75,13 @@ class Activities(ViewSet):
     def update(self, request, pk=None):
         """Handle PUT requests for Categories"""
 
-        activity = Activity.objects.get(pk=pk)
-        activity.label = request.data["label"]
+        locationId = Location.objects.get(locationId=request.auth.user)
+        activity = Activity()
+
+        activity.name = request.data["name"]
+        activity.description = request.data["description"]
+        activity.date = request.data["date"]
+        activity.photo = request.data["photo"]
         activity.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
@@ -80,7 +91,7 @@ class Activities(ViewSet):
 class ActivitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Activity
-        fields = ('id', 'title', 'description', 'date', 'photo', 'location')
+        fields = ('id', 'name', 'description', 'date', 'photo')
 
 
 

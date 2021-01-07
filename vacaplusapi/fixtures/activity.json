@@ -3,11 +3,66 @@
         "model": "vacaplusapi.activity",
         "pk": 1,
         "fields": {
-            "title": "Swimming",
-            "locationId": 1,
-            "description": "Activity time!",
+            "name": "Swimming",
+            "description": "name time!",
             "date": "2019-12-12",
-            "photo": "asd"
+            "photo": "asd",
+            "locationId": 1
+        }
+    },
+    {
+        "model": "vacaplusapi.activity",
+        "pk": 2,
+        "fields": {
+            "name": "Swimming",
+            "description": "name time!",
+            "date": "2019-12-12",
+            "photo": "asd",
+            "locationId": 1
+        }
+    },
+    {
+        "model": "vacaplusapi.activity",
+        "pk": 3,
+        "fields": {
+            "name": "Swimming",
+            "description": "name time!",
+            "date": "2019-12-12",
+            "photo": "asd",
+            "locationId": 1
+        }
+    },
+    {
+        "model": "vacaplusapi.activity",
+        "pk": 4,
+        "fields": {
+            "name": "Swimming",
+            "description": "name time!",
+            "date": "2019-12-12",
+            "photo": "asd",
+            "locationId": 1
+        }
+    },
+    {
+        "model": "vacaplusapi.activity",
+        "pk": 5,
+        "fields": {
+            "name": "Swimming",
+            "description": "name time!",
+            "date": "2019-12-12",
+            "photo": "asd",
+            "locationId": 1
+        }
+    },
+    {
+        "model": "vacaplusapi.activity",
+        "pk": 6,
+        "fields": {
+            "name": "Swimming",
+            "description": "name time!",
+            "date": "2019-12-12",
+            "photo": "asd",
+            "locationId": 1
         }
     }
 ]
