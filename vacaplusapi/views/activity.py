@@ -17,9 +17,8 @@ class Activities(ViewSet):
         activity = Activity()
 
         activity.name = request.data["name"]
-        activity.description = request.data["description"]
-        activity.date = request.data["date"]
-        activity.photo = request.data["photo"]
+        # activity.name2 = request.data["name2"]
+        # activity.name3 = request.data["name3"]
 
         try:
             activity.save()
@@ -79,9 +78,8 @@ class Activities(ViewSet):
         activity = Activity()
 
         activity.name = request.data["name"]
-        activity.description = request.data["description"]
-        activity.date = request.data["date"]
-        activity.photo = request.data["photo"]
+        # activity.name2 = request.data["name2"]
+        # activity.name3 = request.data["name3"]
         activity.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
@@ -91,7 +89,7 @@ class Activities(ViewSet):
 class ActivitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Activity
-        fields = ('id', 'name', 'description', 'date', 'photo')
+        fields = ('id', 'name')
 
 
 
