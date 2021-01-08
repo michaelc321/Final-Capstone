@@ -5,7 +5,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from vacaplusapi.models import Location, VacaUser
+from vacaplusapi.models import Location, VacaUser, Activity
 
 
 class Locations(ViewSet):
@@ -22,7 +22,7 @@ class Locations(ViewSet):
         location.title = request.data["title"]
         location.description = request.data["description"]
         location.photo = request.data["photo"]
-        location.activity = request.data["activity"]
+        location.activity = Activity.objects.get(pk=request.data["activity"])
 
         try:
             location.save()
@@ -43,6 +43,13 @@ class Locations(ViewSet):
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
+        # try:
+        #     location = Location.objects.get(pk=pk)
+        #     activities = Activity.objects.filter(location=location)
+        #     serializer = LocationSerializer(location, context={'request': request})
+        #     return Response(serializer.data)
+        # except Exception as ex:
+        #     return HttpResponseServerError(ex)
 
     def list(self, request):
         """Handle GET requests to get all Categories
@@ -86,7 +93,7 @@ class Locations(ViewSet):
         location.title = request.data["title"]
         location.description = request.data["description"]
         location.photo = request.data["photo"]
-        location.activity = request.data["activity"]
+        location.activity = Activity.objects.get(pk=request.data["activity"])
         location.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
@@ -97,6 +104,7 @@ class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
         fields = ('id', 'time', 'user', 'title', 'description', 'photo', 'activity')
+        depth = 1
 
 
 

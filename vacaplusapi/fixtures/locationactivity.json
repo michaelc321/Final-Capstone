@@ -1,0 +1,26 @@
+[
+    {
+    "model": "vacaplusapi.locationactivity",
+    "pk": 1,
+    "fields": {
+        "location": 1,
+        "activity": 1
+    }
+},
+{
+    "model": "vacaplusapi.locationactivity",
+    "pk": 2,
+    "fields": {
+        "location": 2,
+        "activity": 2
+    }
+},
+{
+    "model": "vacaplusapi.locationactivity",
+    "pk": 3,
+    "fields": {
+        "location": 2,
+        "activity": 1
+    }
+}
+]
