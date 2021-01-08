@@ -39,11 +39,17 @@ class Locations(ViewSet):
         """
         try:
             location = Location.objects.get(pk=pk)
-            activities = Activity.objects.filter(location=location)
             serializer = LocationSerializer(location, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
+        # try:
+        #     location = Location.objects.get(pk=pk)
+        #     activities = Activity.objects.filter(location=location)
+        #     serializer = LocationSerializer(location, context={'request': request})
+        #     return Response(serializer.data)
+        # except Exception as ex:
+        #     return HttpResponseServerError(ex)
 
     def list(self, request):
         """Handle GET requests to get all Categories
