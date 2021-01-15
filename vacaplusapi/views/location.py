@@ -5,7 +5,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from vacaplusapi.models import Location, VacaUser, Activity
+from vacaplusapi.models import Location, VacaUser, LocationActivity
 
 
 class Locations(ViewSet):
@@ -17,12 +17,13 @@ class Locations(ViewSet):
         user = VacaUser.objects.get(user=request.auth.user)
         location = Location()
 
-        location.time = request.data["time"]
         location.user = user
         location.title = request.data["title"]
+        location.time = request.data["time"]
         location.description = request.data["description"]
         location.photo = request.data["photo"]
-        location.activity = Activity.objects.get(pk=request.data["activity"])
+
+        
 
         try:
             location.save()
@@ -93,7 +94,6 @@ class Locations(ViewSet):
         location.title = request.data["title"]
         location.description = request.data["description"]
         location.photo = request.data["photo"]
-        location.activity = Activity.objects.get(pk=request.data["activity"])
         location.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
@@ -103,8 +103,9 @@ class Locations(ViewSet):
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
-        fields = ('id', 'time', 'user', 'title', 'description', 'photo', 'activity')
+        fields = ('id', 'time', 'user', 'title', 'description', 'photo')
         depth = 1
+        
 
 
 

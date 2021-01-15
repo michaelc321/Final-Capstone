@@ -17,8 +17,6 @@ class Activities(ViewSet):
         activity = Activity()
 
         activity.name = request.data["name"]
-        # activity.name2 = request.data["name2"]
-        # activity.name3 = request.data["name3"]
 
         try:
             activity.save()
@@ -78,6 +76,7 @@ class Activities(ViewSet):
         activity = Activity()
 
         activity.name = request.data["name"]
+        # activity.location = Location.objects.get(pk=request.data["location"])
         # activity.name2 = request.data["name2"]
         # activity.name3 = request.data["name3"]
         activity.save()

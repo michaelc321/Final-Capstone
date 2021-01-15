@@ -1,7 +1,4 @@
-# from vacaplusapi.models import Activity
-# from vacaplusapi.models.vacauser import VacaUser
 from django.db import models
-# 
 
 
 class Location(models.Model):
@@ -10,5 +7,4 @@ class Location(models.Model):
     user = models.ForeignKey("VacaUser", on_delete=models.DO_NOTHING, related_name="vacauser")
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
-    activity = models.ForeignKey("Activity", on_delete=models.DO_NOTHING, related_name="activity")
     photo = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)

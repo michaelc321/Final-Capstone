@@ -9,7 +9,7 @@ router.register(r'vacausers', VacaUsers, 'vacauser')
 router.register(r'locations', Locations, 'location')
 router.register(r'activities', Activities, 'activity')
 router.register(r'users', Users, 'user')
-router.register(r'locationactivities', LocationActivities, 'locationactivity')
+router.register(r'locationactivities', LocationActivities, 'locationactivities')
 
 urlpatterns = [
     path('', include(router.urls)),
