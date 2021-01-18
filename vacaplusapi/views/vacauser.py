@@ -44,10 +44,10 @@ class VacaUsers(ViewSet):
         Returns:
             Response -- JSON serialized list of Categories
         """
-        categories = VacaUser.objects.all()
+        vacauser = VacaUser.objects.all()
 
         serializer = VacaUserSerializer(
-            categories, many=True, context={'request': request})
+            vacauser, many=True, context={'request': request})
         return Response(serializer.data)
 
     def destroy(self, request, pk=None):
